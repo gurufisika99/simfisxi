@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ASAS Fisika Kelas XI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--b:#1d4ed8;--p:#1e3a8a;--c:#38bdf8;--ink:#0f2447;--mut:#5b6b85;--g:linear-gradient(135deg,#0b2a5b,#1d4ed8 65%,#38bdf8)}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font:16px/1.5 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);min-height:100vh;
+background:radial-gradient(circle at 8% 0,#dbeafe,transparent 45%),radial-gradient(circle at 100% 25%,#e0f2fe,transparent 45%),radial-gradient(circle at 50% 100%,#cffafe,transparent 50%),#f8fafc}
+.wrap{max-width:560px;margin:0 auto;padding:20px 16px 40px}
+.hero{text-align:center;padding:18px 0}.logo{width:64px;height:64px;margin:0 auto 10px;border-radius:20px;background:var(--g);display:grid;place-items:center;font-size:32px;cursor:pointer;user-select:none;box-shadow:0 10px 24px #1e3a8a40}
+h1{margin:0;font-size:1.7rem;font-weight:800}.hero p{margin:6px 0 0;color:var(--mut)}
+.card{background:#fffffff2;border-radius:20px;padding:20px;box-shadow:0 8px 30px #1d4ed81a;margin-bottom:14px}
+label{display:block;font-weight:600;margin:12px 0 4px;font-size:.92rem}
+input[type=text],input[type=password],input[type=number],textarea{width:100%;padding:13px 14px;border:2px solid #e2e8f0;border-radius:12px;font:inherit;background:#fff}
+input:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 4px #1e3a8a22}
+.row{display:flex;gap:10px}.row>*{flex:1}.pw{position:relative}.pw button{position:absolute;right:6px;top:6px;border:0;background:#eef2ff;color:var(--p);border-radius:8px;padding:8px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.btn{border:0;border-radius:12px;padding:13px 20px;min-height:48px;font:inherit;font-weight:600;color:#fff;background:var(--g);cursor:pointer;transition:transform .15s,opacity .15s}
+.btn:active{transform:scale(.97)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.alt{background:#eef2ff;color:var(--p)}.btn.full{width:100%;margin-top:12px}
+ul.r{margin:12px 0 0;padding-left:20px;color:var(--mut);font-size:.9rem}
+.top{position:sticky;top:0;z-index:5;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 16px;background:#ffffffe6;backdrop-filter:blur(8px);box-shadow:0 2px 12px #1d4ed814}
+.who{font-weight:600;font-size:.9rem}.tp{background:var(--g);color:#fff;border-radius:14px;padding:6px 16px;font-size:1.1rem;font-variant-numeric:tabular-nums}.tp.low{background:linear-gradient(135deg,#dc2626,#f97316)}
+.vp{font-size:.85rem;color:var(--mut)}
+.prog{max-width:980px;margin:12px auto 0;padding:0 16px;display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--mut)}
+.pb{flex:1;height:10px;background:#e2e8f0;border-radius:9px;overflow:hidden}.pb i{display:block;height:100%;width:0;background:var(--g);transition:width .3s}
+.ml{max-width:980px;margin:14px auto;padding:0 16px;display:grid;grid-template-columns:1fr 300px;gap:14px}
+.q small{color:var(--p);font-weight:600}.q h2{font-size:1.4rem;margin:8px 0 18px;line-height:1.4}
+.q input{font-size:1.15rem}.nav{display:flex;gap:10px;margin-top:16px;justify-content:space-between}
+.hint{font-size:.8rem;color:var(--mut);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.grid button{min-height:46px;border-radius:12px;border:2px solid #e2e8f0;background:#fff;font:inherit;font-weight:600;cursor:pointer}
+.grid .ok{background:#e0f2fe;border-color:var(--c)}.grid .fl{border-color:#f59e0b;background:#fef3c7}.grid .cur{border-color:var(--p);background:var(--p);color:#fff}
+.card h3{margin:0 0 10px;font-size:1rem}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0}dt{color:var(--mut)}dd{margin:0;font-weight:600}
+.ov{position:fixed;inset:0;background:#0f2447b3;display:grid;place-items:center;padding:16px;z-index:20;overflow:auto}
+.ov .card{max-width:440px;width:100%;margin:0;animation:pop .2s}.ov .gbox{max-width:980px;max-height:92vh;overflow:auto}
+@keyframes pop{from{transform:scale(.95);opacity:0}}
+#mb{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.x{float:right}
+table{width:100%;border-collapse:collapse;font-size:.85rem}th,td{padding:8px;border-bottom:1px solid #e2e8f0;text-align:left}tr.cl{cursor:pointer}tr.cl:hover{background:#eef2ff}
+.tw{overflow-x:auto}.det{background:#f8fafc;border-radius:12px;padding:12px;margin-top:10px;font-size:.88rem}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:12px 14px;margin:8px 0;border:2px solid #e2e8f0;border-radius:14px;background:#fff;font:inherit;cursor:pointer;min-height:52px}.opt b{width:30px;height:30px;border-radius:50%;background:#eef2ff;color:var(--p);display:grid;place-items:center;flex:none}.opt.on{border-color:var(--p);background:#eff6ff}.opt.on b{background:var(--p);color:#fff}
+#md{z-index:30}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 16px}#ex{user-select:none;-webkit-user-select:none}#go,#sb{background:linear-gradient(135deg,#f97316,#fb923c)}.pb i{background:linear-gradient(90deg,#f97316,#fdba74)!important}
+@media(max-width:760px){.ml{grid-template-columns:1fr}h1{font-size:1.4rem}.nav .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+
+<div id="lg" class="scr wrap">
+ <header class="hero"><div class="logo" id="logo" title=""><svg width="42" height="42" viewBox="-20 -20 40 40" fill="none" stroke="#fff" stroke-width="1.6"><ellipse rx="18" ry="7"/><ellipse rx="18" ry="7" transform="rotate(60)"/><ellipse rx="18" ry="7" transform="rotate(120)"/><circle r="3" fill="#fdba74" stroke="none"/></svg></div><h1>ASAS Fisika Kelas XI</h1><p id="hs" style="font-weight:600">Memuat...</p><p id="hu" style="font-size:.85rem"></p><svg viewBox="0 0 300 20" width="180" style="display:block;margin:10px auto 0" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"><path d="M0 10Q18.75-4 37.5 10T75 10T112.5 10T150 10T187.5 10T225 10T262.5 10T300 10"/></svg></header>
+ <div class="card" id="rs" hidden><b>Ada ulangan yang sedang berjalan.</b><p id="rsn" style="margin:4px 0"></p><button class="btn full" onclick="lanjut()">Lanjutkan ulangan</button></div>
+ <div class="card">
+  <label for="nama">Nama lengkap</label><input id="nama" type="text" autocomplete="name">
+  <div class="row"><div><label for="kelas">Kelas</label><input id="kelas" type="text" placeholder="X-1"></div>
+  <div><label for="absen">Nomor absen</label><input id="absen" type="number" min="1" inputmode="numeric"></div></div>
+  <label for="kode">Kode akses kuis</label>
+  <div class="pw"><input id="kode" type="password" autocomplete="off"><button type="button" onclick="const k=$('kode');k.type=k.type=='password'?'text':'password';this.textContent=k.type=='password'?'Tampilkan':'Sembunyikan'">Tampilkan</button></div>
+  <button class="btn full" id="go" onclick="mulai()">Mulai ujian</button>
+  <ul class="r"><li>Ujian berjalan dalam layar penuh. Jangan berpindah tab atau aplikasi.</li><li>Pelanggaran ke-3 mengakhiri ujian dan jawabanmu dikumpulkan otomatis.</li><li>Timer mulai saat kamu menekan Mulai ujian.</li></ul><div style="text-align:center;margin-top:14px"><button class="btn alt" onclick="bukaGuru()">Panel guru</button></div>
+ </div>
+</div>
+
+<div id="ex" class="scr" hidden>
+ <div class="top"><div class="who" id="who"></div><div class="tp" id="tmp">Sisa <b id="tm">90:00</b></div><div class="vp">Pelanggaran: <b id="vc">0 dari 3</b></div></div>
+ <div class="prog"><div class="pb"><i id="bar"></i></div><span id="pc"></span></div>
+ <main class="ml">
+  <section class="card q"><small id="qn"></small><h2 id="qt"></h2>
+   <div id="opts" role="radiogroup"></div><div class="hint">Pilih satu jawaban. Jawaban tersimpan otomatis dan boleh diubah sebelum dikumpulkan.</div>
+   <div class="nav"><button class="btn alt" id="pv">Sebelumnya</button><button class="btn alt" id="fl">Tandai</button><button class="btn" id="nx">Berikutnya</button></div></section>
+  <aside class="card"><h3>Navigasi soal</h3><div class="grid" id="grid"></div>
+   <p class="hint">Biru muda: dijawab. Kuning: ditandai. Putih: belum dijawab.</p><button class="btn full" id="sb">Kumpulkan jawaban</button></aside>
+ </main>
+</div>
+
+<div id="dn" class="scr wrap" hidden><div class="card" style="text-align:center;margin-top:40px"><div style="font-size:48px">✅</div><h1>Jawaban berhasil dikumpulkan</h1><dl id="dl" style="text-align:left"></dl><p class="hint">Hasil dan pembahasan hanya dapat dilihat oleh guru. Kamu boleh menutup halaman ini.</p></div></div>
+
+<div id="md" class="ov" hidden><div class="card"><h3 id="mt"></h3><p id="mm" style="margin:6px 0"></p><div id="mb"></div></div></div>
+
+<div id="gr" class="ov" hidden><div class="card gbox"><button class="btn alt x" onclick="$('gr').hidden=true">Tutup</button><h2 style="margin:0 0 10px">Panel guru</h2>
+ <div id="gl"><input id="sandi" type="password" placeholder="Kata sandi guru" style="margin-bottom:10px"><button class="btn" onclick="loginGuru()">Masuk</button></div><div id="gb" hidden></div></div></div>
+
+<script>
+/* ====== KONFIGURASI: tempel URL Web App Google Apps Script di sini ====== */
+const URL_GAS='https://script.google.com/macros/s/AKfycbwRSP3LI15_eOaSdLw55HcKReXlok-biH93_C1abRGl2ZpradSPjpgUNd2J21hZ_e59/exec';
+/* ======================================================================= */
+const Q=[["Sebuah benda bermassa 4 kg berada di atas lantai datar. Benda tersebut mendapat gaya dorong vertikal ke bawah sebesar 8 N. Jika percepatan gravitasi g = 10 m/s², besar gaya normal lantai terhadap benda adalah ....", ["32 N", "40 N", "48 N", "52 N", "60 N"]], ["Sebuah balok bermassa 2 kg ditarik dengan gaya 15 N membentuk sudut 37° terhadap arah horizontal. Gaya tersebut mengarah ke atas. Koefisien gesek kinetis antara balok dan lantai adalah 0,2. Diketahui sin 37° = 0,6 dan cos 37° = 0,8. Percepatan balok adalah ....", ["2,4 m/s²", "3,2 m/s²", "4,0 m/s²", "4,9 m/s²", "6,0 m/s²"]], ["Sebuah balok bermassa 5 kg berada pada bidang miring dengan sudut kemiringan 30°. Koefisien gesek kinetis antara balok dan bidang adalah 0,2. Jika balok bergerak menuruni bidang, besar percepatannya adalah ....", ["1,5 m/s²", "2,0 m/s²", "3,3 m/s²", "4,5 m/s²", "5,0 m/s²"]], ["Dua balok bermassa 2 kg dan 4 kg dihubungkan dengan tali pada bidang datar licin. Kedua balok ditarik dengan gaya horizontal 24 N yang bekerja pada balok bermassa 4 kg. Besar tegangan tali antara kedua balok adalah ....", ["4 N", "6 N", "8 N", "12 N", "16 N"]], ["Dua benda bermassa 3 kg dan 5 kg dihubungkan menggunakan tali melalui katrol licin. Kedua benda tergantung bebas dan bergerak vertikal. Jika massa tali dan katrol diabaikan, besar tegangan tali adalah ....", ["25 N", "30 N", "32,5 N", "37,5 N", "50 N"]], ["Sebuah wadah berisi minyak dengan tinggi 1 m dan massa jenis 800 kg/m³ di atas air dengan tinggi 2 m dan massa jenis 1.000 kg/m³. Jika g = 10 m/s², tekanan hidrostatis di dasar wadah adalah ....", ["18.000 Pa", "20.000 Pa", "24.000 Pa", "28.000 Pa", "32.000 Pa"]], ["Sebuah dongkrak hidrolik memiliki luas penampang piston kecil 0,02 m² dan luas penampang piston besar 0,5 m². Jika gaya sebesar 100 N diberikan pada piston kecil, gaya yang dihasilkan pada piston besar adalah ....", ["500 N", "1.000 N", "1.500 N", "2.000 N", "2.500 N"]], ["Sebuah benda tercelup seluruhnya dalam air. Volume benda tersebut adalah 0,004 m³. Jika massa jenis air 1.000 kg/m³ dan percepatan gravitasi 10 m/s², besar gaya ke atas yang dialami benda adalah ....", ["10 N", "20 N", "30 N", "40 N", "50 N"]], ["Air mengalir melalui pipa dengan luas penampang pertama 12 cm² dan kecepatan aliran 3 m/s. Jika luas penampang kedua 4 cm², kecepatan air pada penampang kedua adalah ....", ["1 m/s", "3 m/s", "6 m/s", "9 m/s", "12 m/s"]], ["Sebuah benda berotasi akibat gaya sebesar 15 N yang bekerja tegak lurus pada ujung batang berjarak 0,4 m dari sumbu rotasi. Jika percepatan sudut benda 2 rad/s², momen inersia benda tersebut adalah ....", ["1 kg·m²", "2 kg·m²", "3 kg·m²", "4 kg·m²", "5 kg·m²"]]];
+const MAXV=3,KEY='asas-fisika-xi',N=Q.length;
+const $=id=>document.getElementById(id),pad=n=>String(n).padStart(2,'0');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let S=null,off=0,tm=null,active=false,sending=false,last=0,T=null,D=null;
+try{S=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+async function api(d){
+  if(URL_GAS.startsWith('GANTI'))throw new Error('Backend belum dihubungkan. Isi URL_GAS pada file HTML.');
+  const r=await fetch(URL_GAS,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)});
+  return r.json();}
+function show(id){document.querySelectorAll('.scr').forEach(e=>e.hidden=e.id!==id);scrollTo(0,0)}
+function modal(t,m,btns){$('mt').textContent=t;$('mm').textContent=m;const b=$('mb');b.innerHTML='';
+  (btns||[['OK']]).forEach(([l,f])=>{const x=document.createElement('button');x.className='btn';x.textContent=l;x.onclick=()=>{$('md').hidden=true;f&&f()};b.append(x)});$('md').hidden=false}
+function fs(){try{const p=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();p&&p.catch&&p.catch(()=>{})}catch(e){}}
+
+async function mulai(){
+  const nama=$('nama').value.trim(),kelas=$('kelas').value.trim(),absen=$('absen').value.trim(),kode=$('kode').value.trim();
+  if(!nama||!kelas||!absen||!kode)return modal('Data belum lengkap','Isi nama, kelas, nomor absen, dan kode akses.');
+  $('go').disabled=true;
+  try{const r=await api({a:'mulai',nama,kelas,absen,kode});
+    if(!r.ok)return modal('Belum bisa memulai',r.msg);
+    off=r.now-Date.now();
+    if(!(S&&S.id===r.id&&!S.done))S={id:r.id,nama,kelas,absen,ans:Array(N).fill(''),fl:Array(N).fill(false),i:0,viol:[],w:[],done:false};
+    Object.assign(S,{start:r.start,end:r.end,off});save();masuk();
+  }catch(e){modal('Gagal terhubung',e.message)}finally{$('go').disabled=false}}
+function lanjut(){off=S.off||0;if(S.pending){show('ex');render();kumpul(S.pending);return}masuk()}
+function masuk(){show('ex');active=true;fs();$('who').textContent=S.nama+' (kelas '+S.kelas+', no. '+S.absen+')';render();tick();clearInterval(tm);tm=setInterval(tick,1000)}
+function meta(){const n=S.ans.filter(x=>x.trim()).length;$('bar').style.width=n/N*100+'%';$('pc').textContent=n+' dari '+N+' terjawab';
+  $('grid').innerHTML=S.ans.map((x,k)=>`<button class="${x.trim()?'ok':''} ${S.fl[k]?'fl':''} ${k==S.i?'cur':''}" onclick="go(${k})" aria-label="Soal ${k+1}">${k+1}</button>`).join('');
+  $('vc').textContent=S.viol.length+' dari '+MAXV}
+function render(){$('qn').textContent='Soal '+(S.i+1)+' dari '+N;$('qt').textContent=Q[S.i][0];opts();
+  $('pv').disabled=S.i==0;$('nx').disabled=S.i==N-1;meta()}
+function go(k){S.i=k;save();render()}
+function opts(){$('opts').innerHTML=Q[S.i][1].map((o,k)=>{const L='ABCDE'[k],on=S.ans[S.i]==L;return `<button class="opt ${on?'on':''}" role="radio" aria-checked="${on}" onclick="pick('${L}')"><b>${L}</b><span>${esc(o)}</span></button>`}).join('');$('fl').textContent=S.fl[S.i]?'Batal tandai':'Tandai'}
+function pick(L){if(!active)return;S.ans[S.i]=L;save();opts();meta()}
+$('fl').onclick=()=>{if(!active)return;S.fl[S.i]=!S.fl[S.i];save();opts();meta()};
+$('pv').onclick=()=>go(S.i-1);$('nx').onclick=()=>go(S.i+1);
+$('sb').onclick=()=>{const k=S.ans.filter(x=>!x.trim()).length;
+  modal('Kumpulkan jawaban?',(k?k+' soal belum dijawab. ':'Semua soal sudah dijawab. ')+'Setelah dikumpulkan, jawaban tidak dapat diubah.',[['Periksa lagi'],['Ya, kumpulkan',()=>kumpul('Selesai')]])};
+function tick(){const s=Math.max(0,Math.ceil((S.end-(Date.now()+off))/1000));
+  $('tm').textContent=pad(s/60|0)+':'+pad(s%60);$('tmp').classList.toggle('low',s<=600);
+  [[5,300],[1,60]].forEach(([m,t])=>{if(s>0&&s<=t&&!S.w.includes(m)&&!sending){S.w.push(m);save();modal('Sisa waktu '+m+' menit','Periksa kembali jawabanmu sebelum waktu habis.')}});
+  if(s<=0)kumpul('Waktu habis')}
+
+async function kumpul(st){
+  if(sending)return;sending=true;active=false;clearInterval(tm);$('sb').disabled=true;S.st=st;save();
+  try{const r=await api({a:'kumpul',id:S.id,ans:S.ans,v:S.viol,st});
+    if(r.ok||r.dup){delete S.pending;S.done=true;S.res=r;save();showDone()}else throw new Error(r.msg||'Server menolak data.')}
+  catch(e){sending=false;S.pending=st;save();modal('Jawaban belum terkirim',e.message+' Jawabanmu aman di perangkat ini. Periksa internet lalu coba lagi.',[['Kirim ulang',()=>kumpul(st)]])}}
+function showDone(){active=false;clearInterval(tm);try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}
+  const n=S.ans.filter(x=>x.trim()).length,r=S.res||{};
+  $('dl').innerHTML=`<dt>Nama</dt><dd>${esc(S.nama)}</dd><dt>Kelas</dt><dd>${esc(S.kelas)}</dd><dt>Soal dijawab</dt><dd>${n} dari ${N}</dd><dt>Status</dt><dd>Terkumpul (${esc(S.st||'Selesai')})</dd>`;
+  show('dn')}
+
+/* ====== Deteksi pelanggaran (indikasi saja, bukan pemblokiran mutlak) ====== */
+function viol(t){if(!active||sending)return;const n=Date.now();if(n-last<2000)return;last=n;
+  S.viol.push({w:new Date(n+off).toLocaleTimeString('id-ID'),j:t});save();meta();
+  api({a:'log',nama:S.nama,kelas:S.kelas,absen:S.absen,j:t,ke:S.viol.length}).catch(()=>{});
+  if(S.viol.length>=MAXV){modal('Pelanggaran ke-'+MAXV+' dari '+MAXV,'Batas pelanggaran tercapai. Jawabanmu dikumpulkan otomatis.');kumpul('Dihentikan karena pelanggaran');return}
+  modal('Peringatan: pelanggaran ke-'+S.viol.length+' dari '+MAXV,t+'. Pada pelanggaran ke-'+MAXV+', jawabanmu dikumpulkan otomatis dan ujian berakhir.',[['Kembali ke ujian',fs]])}
+document.addEventListener('visibilitychange',()=>document.hidden&&viol('Berpindah tab, membuka tab baru, meminimalkan browser, atau pindah aplikasi'));
+addEventListener('blur',()=>setTimeout(()=>{if(!document.hasFocus())viol('Halaman ujian kehilangan fokus (jendela atau aplikasi lain aktif)')},300));
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.fullscreenEnabled)viol('Keluar dari mode layar penuh')});
+addEventListener('beforeunload',e=>{if(active){e.preventDefault();e.returnValue=''}});
+addEventListener('pagehide',()=>{if(active)viol('Meninggalkan halaman ujian')});
+document.addEventListener('contextmenu',e=>{if(active){e.preventDefault();viol('Klik kanan pada halaman ujian')}});['copy','cut'].forEach(v=>document.addEventListener(v,e=>{if(active){e.preventDefault();viol('Menyalin teks soal')}}));
+
+/* ====== Panel guru: klik logo 5x atau Ctrl+Shift+G ====== */
+let lc=0,lt;$('logo').onclick=()=>{lc++;clearTimeout(lt);lt=setTimeout(()=>lc=0,1500);if(lc>=5){lc=0;bukaGuru()}};
+addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()=='g'&&!active)bukaGuru()});
+function bukaGuru(){if(active)return;$('gr').hidden=false;$('sandi').focus()}
+async function guru(x){try{const r=await api({a:'guru',sandi:T,...x});if(!r.ok){T=null;$('gl').hidden=false;$('gb').hidden=true;return modal('Gagal',r.msg)}D=r;draw();if(r.warn)modal('Perhatian',r.warn)}catch(e){modal('Gagal',e.message)}}
+function loginGuru(){T=$('sandi').value;$('sandi').value='';guru({})}
+function draw(){$('gl').hidden=true;const g=$('gb');g.hidden=false;const H=D.hasil,pr=D.peserta.filter(p=>p[3]!=='Ya'),v=H.map(r=>+r[21]),n=v.length,C=D.cfg;
+ const fld=(k,l,t)=>`<div style="margin-bottom:6px"><label>${l}</label><div class="row"><input id="c_${k}" type="${t||'text'}" value="${esc(C[k]||'')}"><button class="btn alt" style="flex:0 0 auto" onclick="guru({op:'set',key:'${k}',val:$('c_${k}').value})">Simpan</button></div></div>`;
+ g.innerHTML=`<div class="grid2">${fld('KODE','Kode akses ujian aktif')}${fld('SEKOLAH','Nama sekolah')}${fld('UJIAN','Identitas ujian')}${fld('DURASI','Durasi (menit), berlaku untuk peserta baru','number')}<div><label>Kata sandi guru baru (min. 6 karakter)</label><div class="row"><input id="nsandi" type="password" autocomplete="new-password"><button class="btn alt" style="flex:0 0 auto" onclick="gantiSandi()">Ganti</button></div></div></div>
+ <p><b>Rekap:</b> ${n} peserta sudah mengumpulkan, ${pr.length} sedang mengerjakan. Rata-rata ${n?(v.reduce((a,b)=>a+b,0)/n).toFixed(1):'-'}, tertinggi ${n?Math.max(...v):'-'}, terendah ${n?Math.min(...v):'-'}.</p>
+ <p><button class="btn alt" onclick="unduh()">Unduh CSV</button> <button class="btn alt" onclick="guru({})">Muat ulang</button> <button class="btn alt" onclick="$('kj').hidden=!$('kj').hidden">Kunci jawaban</button></p>
+ <div id="kj" class="det" hidden>${D.kunci.map((k,i)=>(i+1)+'. '+k).join(' | ')}</div>
+ <p><b>Sedang mengerjakan:</b> ${pr.map(p=>esc(p[0])+' ('+esc(p[1])+' no.'+esc(p[2])+')').join(', ')||'-'}</p>
+ <p>Klik baris untuk melihat jawaban per nomor.</p><div class="tw"><table><tr><th>Nama</th><th>Kelas</th><th>Absen</th><th>Nilai</th><th>Benar</th><th>Salah</th><th>Kosong</th><th>Mulai</th><th>Selesai</th><th>Menit</th><th>Pelanggaran</th><th>Status</th></tr>${H.map((r,i)=>`<tr class="cl" onclick="det(${i})">`+[1,2,3,21,18,19,20,5,6,7,22,23].map(k=>`<td>${esc(r[k])}</td>`).join('')+'</tr>').join('')}</table></div><div id="dt"></div>`}
+function det(i){const r=D.hasil[i],b=D.benar[i];$('dt').innerHTML=`<div class="det"><b>${esc(r[1])}</b> (kelas ${esc(r[2])}, no. ${esc(r[3])}), kode sesi ${esc(r[4])}<br>Pelanggaran: ${esc(r[24]||'tidak ada')}<br><br>`+D.kunci.map((k,j)=>(j+1)+'. '+(b[j]?'✓':'✗')+' jawaban: <b>'+esc(r[8+j]||'(kosong)')+'</b> | kunci: '+k).join('<br>')+'</div>';$('dt').scrollIntoView({behavior:'smooth'})}
+function unduh(){const c=[D.head,...D.hasil].map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+c],{type:'text/csv'}));a.download='hasil-asas-fisika-xi.csv';a.click()}
+async function gantiSandi(){const v=$('nsandi').value;if(v.length<6)return modal('Terlalu pendek','Kata sandi minimal 6 karakter.');await guru({op:'set',key:'SANDI',val:v});if(T)T=v}
+
+/* ====== Muat ulang halaman ====== */
+if(S&&S.done)showDone();
+else if(S){$('rs').hidden=false;$('rsn').textContent='Atas nama '+S.nama+' (kelas '+S.kelas+'). Waktu tetap berjalan sejak ujian dimulai.'}
+addEventListener('online',()=>{if(S&&S.pending&&!S.done&&!sending)kumpul(S.pending)});
+api({a:'cfg'}).then(c=>{if(c.ok){$('hs').textContent=c.sekolah;$('hu').textContent=c.ujian+' ('+c.jumlah+' soal, '+c.durasi+' menit)'}}).catch(()=>{$('hs').textContent=''});
+</script></body></html>
